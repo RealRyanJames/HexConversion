@@ -1,13 +1,34 @@
+
 private int x = 0;
 private int y = 0;
 private int z = 0;
 
+static class Positions {
+    private final static long xPos = 40;
+    private final static long yPos = 40;
+    private final static long zPos = 40;
+
+    public long x() {
+        return xPos / 2;
+    }
+
+    public long y() {
+        return yPos / 2;
+    }
+
+    public long z() {
+        return zPos / 2;
+    }
+}
+
 void main() {
 
+    Positions posPos = new Positions();
 
-    x += (((5 * 2) + 10) + 5) * 10;
-    y += (((5 * 2) + 10) + 5) * 10;
-    z += (((5 * 2) + 10) + 5) * 10;
+
+    x += (((5 * 2) + (int)posPos.x() / 2) + 5) * (int)posPos.x() / 2;
+    y += (((5 * 2) + (int)posPos.y() / 2) + 5) * (int)posPos.y() / 2;
+    z += (((5 * 2) + (int)posPos.z() / 2) + 5) * (int)posPos.z() / 2;
 
     int randomX = randomNumbers((float) x);
     int randomY = randomNumbers((float) y);
